@@ -40,7 +40,7 @@ const devlopment = {
 const production = {
   name: "production",
   asset_path: process.env.SOCIALHUB_ASSET_PATH,
-  db: process.env.SOCIALHUB_DB,
+  db: "mongodb+srv://goyalmanika20:L6ZKwDY4DaV9LxQU@socialhub.0ydpadf.mongodb.net/?retryWrites=true&w=majority&appName=socialhub",
   session_cookie_key: process.env.SOCIALHUB_SESSION_COOKIE_KEY,
   smtp: {
     service: "gmail",
