@@ -4,7 +4,7 @@ console.log(env.db);
 
 async function mongoConnect() {
   try {
-    mongoose.connect(`mongodb://0.0.0.0:27017/${env.db}`);
+    mongoose.connect(`mongodb://127.0.0.1:27017/${env.db}`);
     const db = await mongoose.connection;
     await db.on(
       "error",
