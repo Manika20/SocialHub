@@ -10,32 +10,6 @@ const accessLogStream = rfs("access.log", {
   path: logDirectry,
 });
 
-const devlopment = {
-  name: "devlopment",
-  asset_path: "/assets",
-  db: "socialhub_development",
-  session_cookie_key: "RIaZDQKpFif69igvjBSYkBiwrVGkTldk",
-  smtp: {
-    service: "gmail",
-    host: "smtp.gmail.com", // corrected the host name
-    port: 587,
-    secure: false, // `false` for port 587, `true` for 465
-    auth: {
-      user: "we.socialhubsite@gmail.com",
-      pass: "llky gnfy uulw dhtk",
-    },
-  },
-  google_clientID:
-    "2727485938-ocq90ndbs7sc8mbfhdnqvr6eqtvrkfgl.apps.googleusercontent.com",
-  google_clientSecret: "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",
-  google_callbackURL: "http://localhost:8000/users/auth/google/callback",
-  jwt_secret: "DXAcWN26vHAYjll92nzSqYTi8wo93a4Y",
-  morgan: {
-    mode: "dev",
-    options: { stream: accessLogStream },
-  },
-};
-
 //console.log(process.env.SOCIALHUB_ASSET_PATH);
 const production = {
   name: "production",
