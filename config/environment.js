@@ -68,7 +68,7 @@ module.exports =
     : eval(process.env.SOCIALHUB_ENVIRONMENT);
 // module.exports=devlopment
 
-// SOCIALHUB_ASSET_PATH=/assets
+// SOCIALHUB_ASSET_PATH=./public/assets
 // SOCIALHUB_DB= mongodb+srv://goyalmanika20:L6ZKwDY4DaV9LxQU@socialhub.0ydpadf.mongodb.net/?retryWrites=true&w=majority&appName=socialhub
 // SOCIALHUB_JWT_SECRET=DXAcWN26vHAYjll92nzSqYTi8wo93a4Y
 // SOCIALHUB_SESSION_COOKIE_KEY= RIaZDQKpFif69igvjBSYkBiwrVGkTldk
