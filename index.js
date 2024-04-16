@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const env = require("./config/environment");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");

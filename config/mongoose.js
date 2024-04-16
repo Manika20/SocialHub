@@ -1,13 +1,23 @@
 const mongoose = require("mongoose");
+const env = require("./environment");
+console.log(env.db);
 
-const connectDB = async () => {
+async function mongoConnect() {
   try {
-    const dbUri = process.env.SOCIALHUB_DB; // Fetch URI from environment variables
-    await mongoose.connect(dbUri);
-    console.log("Connected to MongoDB!");
-  } catch (err) {
-    console.log("Connection to MongoDB failed", err);
+    mongoose.connect(`mongodb://127.0.0.1:27017/${env.db}`);
+    const db = await mongoose.connection;
+    await db.on(
+      "error",
+      console.error.bind(console, "MongoDB connection error")
+    );
+    await db.on("open", () => {
+      //console.log("Connected to MongoDB");
+    });
+    console.log("Connected to MongoDB");
+    return db;
+  } catch (error) {
+    console.log(error);
   }
-};
+}
 
-module.exports = connectDB;
+module.exports = mongoConnect;
