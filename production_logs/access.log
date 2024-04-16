@@ -606,3 +606,6 @@
 ::1 - - [16/Apr/2024:15:12:16 +0000] "POST /posts/create HTTP/1.1" 200 420 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
 ::1 - - [16/Apr/2024:15:12:16 +0000] "GET /images/point.png HTTP/1.1" 404 155 "http://localhost:8000/home-3da895ee24.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
 ::1 - - [16/Apr/2024:15:12:16 +0000] "POST /posts/create HTTP/1.1" 200 420 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+::1 - - [16/Apr/2024:15:24:26 +0000] "GET / HTTP/1.1" 200 5704 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+::1 - - [16/Apr/2024:15:24:26 +0000] "GET /images/point.png HTTP/1.1" 404 155 "http://localhost:8000/home-3da895ee24.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+::1 - - [16/Apr/2024:15:30:37 +0000] "POST /posts/create HTTP/1.1" 200 464 "http://localhost:8000/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Mobile Safari/537.36"
