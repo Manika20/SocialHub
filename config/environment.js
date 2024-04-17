@@ -36,8 +36,6 @@ const production = {
   },
 };
 
-module.exports =
-  eval(process.env.SOCIALHUB_ENVIRONMENT) == undefined
-    ? devlopment
-    : eval(process.env.SOCIALHUB_ENVIRONMENT);
+module.exports = production;
+
 // module.exports=devlopment
