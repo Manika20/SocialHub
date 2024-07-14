@@ -14,6 +14,7 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       try {
         // Find the user based on their email address.
+        console.log(GoogleStrategy);
         let user = await User.findOne({ email: profile.emails[0].value });
 
         if (user) {

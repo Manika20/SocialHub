@@ -10,7 +10,7 @@ const accessLogStream = rfs("access.log", {
   path: logDirectry,
 });
 
-//console.log(process.env.SOCIALHUB_ASSET_PATH);
+console.log(process.env.SOCIALHUB_GOOGLE_CALLBACK_URL);
 const production = {
   name: "production",
   asset_path: process.env.SOCIALHUB_ASSET_PATH,
@@ -32,10 +32,9 @@ const production = {
   jwt_secret: process.env.SOCIALHUB_JWT_SECRET,
   morgan: {
     mode: "combined",
+
     options: { stream: accessLogStream },
   },
 };
 
 module.exports = production;
-
-// module.exports=devlopment

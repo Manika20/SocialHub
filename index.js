@@ -4,7 +4,7 @@ const env = require("./config/environment");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const app = express();
-require("./config/view_helper")(app);
+
 const port = 8000;
 const cors = require("cors");
 const path = require("path");
@@ -43,7 +43,7 @@ if (env.name == "devlopment") {
 //console.log(path.join(__dirname, env.asset_path, "css"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(env.asset_path));
+app.use(express.static(path.join(__dirname, "assets"))); // Serve static files from the 'assets' directory
 //make the upload path available to browser
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(logger(env.morgan.mode, env.morgan.options));
@@ -87,6 +87,7 @@ app.use(flash());
 app.use(customMware.setFlash);
 //use express router
 app.use("/", require("./routes/index"));
+console.log(env.google_callbackURL);
 app.listen(port, async (err) => {
   if (err) {
     console.log(`error while connecting server ${err}`);
