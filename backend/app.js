@@ -3,17 +3,21 @@ const express = require("express");
 const env = require("./config/environment");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
 const app = express();
-
-//console.log(process.env);
-const port = 8000 || env.port;
+const port = process.env.PORT || 8000;
 const cors = require("cors");
+app.use(helmet());
+app.use(logger(env.morgan.mode === "development" ? "dev" : "combined"));
+
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
 const mongoConnect = require("./config/mongoose");
 //used for session cookie
 //express-session is use to create the cookie(session) and encrypt it
 const db = mongoConnect();
+app.use(cors()); // You might need to configure this based on your requirements
+
 const session = require("express-session");
 
 const passport = require("passport");
@@ -28,6 +32,7 @@ const chatServer = require("http").Server(app);
 const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
 chatServer.listen(5000);
 //console.log("Chat server is listening on port 5000");
+
 if (env.name == "devlopment") {
   app.use(
     sassMiddleware({
@@ -67,7 +72,10 @@ app.use(
     secret: env.session_cookie_key,
     store: MongoStore.create(
       {
-        mongoUrl: "mongodb://127.0.0.1:27017/socialhub_development",
+        mongoUrl:
+          process.env.SOCIALHUB_MONGOO_URL ||
+          "mongodb://127.0.0.1:27017/socialhub_development",
+
         autoRemove: "disabled",
       },
       function (err) {
@@ -94,6 +102,11 @@ app.use(customMware.setFlash);
 //use express router
 app.use("/", require("./routes/index"));
 //console.log(env.google_callbackURL);
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+
 app.listen(port, async (err) => {
   if (err) {
     console.log(`error while connecting server ${err}`);
