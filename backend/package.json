@@ -51,7 +51,7 @@
     "rimraf": "^5.0.5",
     "rotating-file-stream": "^3.2.1",
     "sass": "^1.75.0",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.8.0"
   },
   "devDependencies": {
     "grunt-contrib-uglify": "^5.2.2",
