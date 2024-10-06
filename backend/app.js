@@ -30,7 +30,7 @@ const flash = require("connect-flash");
 const customMware = require("./config/middleware");
 const chatServer = require("http").Server(app);
 const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
-const chart_port = process.env.CHART_PORT || 5000;
+const chart_port = process.env.CHART_PORT || 3000;
 chatServer.listen(chart_port);
 console.log("Chat server is listening on port 5000");
 
