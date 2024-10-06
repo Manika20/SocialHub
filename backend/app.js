@@ -32,7 +32,7 @@ const chatServer = require("http").Server(app);
 const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
 const chart_port = process.env.CHART_PORT || 3000;
 chatServer.listen(chart_port);
-console.log("Chat server is listening on port 5000");
+console.log(`Chat server is listening on port ${chart_port}`);
 
 if (env.name == "devlopment") {
   app.use(
