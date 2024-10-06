@@ -7,7 +7,7 @@ const helmet = require("helmet");
 const app = express();
 const port = process.env.PORT || 8000;
 const cors = require("cors");
-app.use(helmet());
+//app.use(helmet());
 app.use(logger(env.morgan.mode === "development" ? "dev" : "combined"));
 
 const path = require("path");
@@ -32,7 +32,7 @@ const chatServer = require("http").Server(app);
 const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
 const chart_port = process.env.CHART_PORT || 5000;
 chatServer.listen(5000);
-//console.log("Chat server is listening on port 5000");
+console.log("Chat server is listening on port 5000");
 
 if (env.name == "devlopment") {
   app.use(
