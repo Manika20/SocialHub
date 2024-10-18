@@ -1,7 +1,9 @@
 module.exports.chatSockets = function (socketServer) {
   let io = require("socket.io")(socketServer, {
     cors: {
-      origin: "*",
+      origin: "https://socialhub-dwox.onrender.com", // Allow requests from this URL
+      methods: ["GET", "POST"],
+      credentials: true,
     },
   });
   // whenever a requestes is received it acctomaticals emits the response.

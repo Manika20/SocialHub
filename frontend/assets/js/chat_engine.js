@@ -4,7 +4,7 @@ class ChatEngine {
       (this.userEmail = s),
       (this.messageHistory = {}),
       //(this.socket = io.connect("http://localhost:5000")),
-      (this.socket = io("https://socialhub-dwox.onrender.com:5000")),
+      (this.socket = io()),
       this.userEmail && this.connectionHandler();
   }
   connectionHandler() {
