@@ -33,6 +33,16 @@ const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
 const chart_port = process.env.CHART_PORT || 3000;
 chatServer.listen(chart_port);
 console.log(`Chat server is listening on port ${chart_port}`);
+/*const http = require("http");
+const socketIo = require("socket.io");
+
+const chatServer = http.Server(app);
+const io = socketIo(chatServer); // Attach socket.io to the server
+
+const chatSockets = require("./config/chat_socket").chatSockets(io); // Pass io to chatSockets
+const chart_port = process.env.CHART_PORT || 3000;
+chatServer.listen(chart_port);
+console.log(`Chat server is listening on port ${chart_port}`);*/
 
 if (env.name == "devlopment") {
   app.use(
